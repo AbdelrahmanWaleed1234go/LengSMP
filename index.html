@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LengSMP</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+
+  <!-- Header / Navigation -->
+  <header>
+    <div class="logo">LengSMP</div>
+    <a href="https://discord.gg" target="_blank" class="btn-discord-nav">
+      <span>سيرفر الديسكورد</span>
+    </a>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="tagline">أهلاً بك في سيرفرنا</div>
+    <h1>عالم الإبداع والمغامرة بانتظارك</h1>
+    <p>انضم إلينا الآن واستمتع بأفضل تجربة لعب مع مجتمع متكامل وسيرفر خالي من الـ Lag!</p>
+    
+    <div class="hero-btns">
+      <a href="#ip-section" class="mc-btn mc-btn-primary">
+        <span class="mc-btn-icon">🎮</span>
+        <span>العب الآن</span>
+      </a>
+      <a href="#how-to-join" class="mc-btn mc-btn-secondary">
+        <span class="mc-btn-icon">📜</span>
+        <span>طريقة الدخول</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Server IPs Section -->
+  <section class="section-padding" id="ip-section">
+    <h2 class="section-title">عنوان السيرفر (IP)</h2>
+    <div class="cards-grid">
+      
+      <!-- Java Edition Card -->
+      <div class="ip-card">
+        <div class="edition-title">JAVA EDITION</div>
+        <div class="ip-address">
+          <span>lengsmp.duckdns.org</span>
+          <button class="copy-icon" onclick="copyIp('lengsmp.duckdns.org')">نسخ الـ IP</button>
+        </div>
+      </div>
+
+      <!-- Bedrock Edition Card -->
+      <div class="ip-card">
+        <div class="edition-title">BEDROCK EDITION</div>
+        <div class="ip-address">
+          <span>207.180.221.121 : 19132</span>
+          <button class="copy-icon" onclick="copyIp('207.180.221.121')">نسخ الـ IP</button>
+        </div>
+        <div class="info-footer">البروتوكول: 19132</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 🎮 How to Join Section -->
+  <section class="section-padding" id="how-to-join">
+    <h2 class="section-title">طريقة الدخول للسيرفر</h2>
+    
+    <div class="steps-grid">
+      <!-- الخطوة الأولى: القائمة الرئيسية -->
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <img src="image5.png" alt="الخطوة الأولى" class="step-img">
+        <h3>افتح القائمة الرئيسية</h3>
+        <p>اضغط على Multiplayer ثم اختر Add Server لإضافة السيرفر.</p>
+      </div>
+
+      <!-- الخطوة الثانية: أدخل بيانات السيرفر -->
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <img src="image.png" alt="الخطوة الثانية" class="step-img">
+        <h3>أدخل بيانات السيرفر</h3>
+        <p>اكتب اسم السيرفر واكتب الـ IP الخاص بنا في خانة Server Address.</p>
+      </div>
+
+      <!-- الخطوة الثالثة: انضم واستمتع -->
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <img src="image6.png" alt="الخطوة الثالثة" class="step-img">
+        <h3>انضم واستمتع!</h3>
+        <p>اضغط على Done ثم اضغط Join Server وابدأ المغامرة معنا.</p>
+      </div>
+    </div>
+  </section>
+<!-- 📜 Server Commands Section -->
+<section id="commands" style="padding: 60px 20px; max-width: 1100px; margin: 0 auto; direction: rtl;">
+  
+  <style>
+    #commands .section-title {
+      color: #ffff55;
+      text-shadow: 2px 2px 0px #000;
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .commands-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .command-card {
+      background-color: #181818 !important;
+      border: 4px solid #000000 !important;
+      box-shadow: inset -4px -4px 0px 0px #0d0d0d, inset 4px 4px 0px 0px #333333 !important;
+      padding: 18px 20px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 12px !important;
+      transition: transform 0.25s ease, border-color 0.2s ease !important;
+    }
+
+    .command-card:hover {
+      transform: translateY(-5px) scale(1.02) !important;
+      border-color: #ffffff !important;
+    }
+
+    /* إصلاح محاذاة الأمر والزر ليكونوا في سطر مستقل من اليسار لليمين */
+    .command-header {
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      gap: 10px !important;
+      direction: ltr !important; /* يضمن عدم تداخل النصوص الإنجليزية مع الزر */
+      width: 100% !important;
+    }
+
+    .command-code {
+      background: #0a0a0a !important;
+      color: #ffff55 !important;
+      font-family: 'Consolas', 'Courier New', monospace !important;
+      font-size: 15px !important;
+      font-weight: bold !important;
+      padding: 8px 12px !important;
+      border: 2px solid #000000 !important;
+      box-shadow: inset 2px 2px 0px 0px #000 !important;
+      flex-grow: 1 !important;
+      white-space: nowrap !important;
+      overflow: x-auto !important;
+    }
+
+    /* ✂️ زر النسخ بتصميم ماين كرافت مضبوط ومفصول */
+    .copy-cmd-btn {
+      cursor: pointer;
+      background: #3c3c3c !important;
+      color: #ffffff !important;
+      border: 2px solid #000000 !important;
+      box-shadow: inset -2px -2px 0px 0px #1a1a1a, inset 2px 2px 0px 0px #666666 !important;
+      padding: 6px 14px !important;
+      font-size: 13px !important;
+      font-weight: bold !important;
+      flex-shrink: 0 !important;
+      transition: all 0.1s ease !important;
+    }
+
+    .copy-cmd-btn:hover {
+      background: #555555 !important;
+      color: #ffff55 !important;
+      border-color: #ffffff !important;
+    }
+
+    .copy-cmd-btn:active {
+      transform: translateY(2px) !important;
+      box-shadow: inset 2px 2px 0px 0px #000 !important;
+    }
+
+    .command-desc {
+      color: #cccccc !important;
+      font-size: 14px !important;
+      text-align: right !important;
+      margin: 0 !important;
+      line-height: 1.5 !important;
+      direction: rtl !important;
+    }
+  </style>
+
+  <h2 class="section-title">أوامر السيرفر الهامة</h2>
+
+  <div class="commands-grid">
+    <div class="command-card">
+      <div class="command-header">
+        <span class="command-code">/register</span>
+        <button class="copy-cmd-btn" onclick="navigator.clipboard.writeText('/register')">نسخ</button>
+      </div>
+      <p class="command-desc">لعمل كلمه المرور.</p>
+    </div>
+    <div class="command-card">
+      <div class="command-header">
+        <span class="command-code">/login</span>
+        <button class="copy-cmd-btn" onclick="navigator.clipboard.writeText('/login')">نسخ</button>
+      </div>
+      <p class="command-desc">لتسجيل الدخول.</p>
+    </div>
+    <!-- أمر الانتقال العشوائي -->
+    <div class="command-card">
+      <div class="command-header">
+        <span class="command-code">/rtp</span>
+        <button class="copy-cmd-btn" onclick="navigator.clipboard.writeText('/rtp')">نسخ</button>
+      </div>
+      <p class="command-desc">الانتقال إلى مكان عشوائي في العالم.</p>
+    </div>
+
+    <!-- أمر منطقة Spawn -->
+    <div class="command-card">
+      <div class="command-header">
+        <span class="command-code">/spawn</span>
+        <button class="copy-cmd-btn" onclick="navigator.clipboard.writeText('/spawn')">نسخ</button>
+      </div>
+      <p class="command-desc">العودة إلى منطقة الـ Spawn الرئيسية.</p>
+    </div>
+
+    <!-- أمر قائمة المنازل -->
+    <div class="command-card">
+      <div class="command-header">
+        <span class="command-code">/home</span>
+        <button class="copy-cmd-btn" onclick="navigator.clipboard.writeText('/home')">نسخ</button>
+      </div>
+      <p class="command-desc">فتح قائمة المنازل الخاصة بك.</p>
+    </div>
+
+    <!-- أمر طلب الانتقال للاعب -->
+    <div class="command-card">
+      <div class="command-header">
+        <span class="command-code">/tpa [Player]</span>
+        <button class="copy-cmd-btn" onclick="navigator.clipboard.writeText('/tpa')">نسخ</button>
+      </div>
+      <p class="command-desc">إرسال طلب للانتقال إلى لاعب آخر.</p>
+    </div>
+
+    <!-- أمر طلب ذهاب اللاعب إليك -->
+    <div class="command-card">
+      <div class="command-header">
+        <span class="command-code">/tpahere [Player]</span>
+        <button class="copy-cmd-btn" onclick="navigator.clipboard.writeText('/tpahere')">نسخ</button>
+      </div>
+      <p class="command-desc">طلب الشخص للذهاب إليك.</p>
+    </div>
+
+    <!-- أمر قبول الانتقال -->
+    <div class="command-card">
+      <div class="command-header">
+        <span class="command-code">/tpaccept</span>
+        <button class="copy-cmd-btn" onclick="navigator.clipboard.writeText('/tpaccept')">نسخ</button>
+      </div>
+      <p class="command-desc">القبول بطلب الانتقال المقدم إليك.</p>
+    </div>
+
+    <!-- أمر المتجر -->
+    <div class="command-card">
+      <div class="command-header">
+        <span class="command-code">/shop</span>
+        <button class="copy-cmd-btn" onclick="navigator.clipboard.writeText('/shop')">نسخ</button>
+      </div>
+      <p class="command-desc">فتح المتجر لشراء وبيع الموارد.</p>
+    </div>
+
+  </div>
+</section>
+  <!-- Staff Section -->
+  <section class="section-padding" id="staff">
+    <h2 class="section-title">طاقم الإدارة (Staff)</h2>
+    <div class="team-grid">
+
+      <!-- Owner -->
+      <div class="team-card">
+        <div class="role-badge role-owner">OWNER</div>
+        <ul class="team-members">
+          <li>Leng</li>
+        </ul>
+      </div>
+
+      <!-- Co-Owner -->
+      <div class="team-card">
+        <div class="role-badge role-co-owner">CO-OWNER</div>
+        <ul class="team-members">
+          <li>Amr</li>
+          <li>zoz</li>
+        </ul>
+      </div>
+
+      <!-- Manager -->
+      <div class="team-card">
+        <div class="role-badge role-manager">MANAGER</div>
+        <ul class="team-members">
+          <li>M7D 👑 Legend ?</li>
+          <li>توفيق الألماسي</li>
+        </ul>
+      </div>
+
+      <!-- Admin -->
+      <div class="team-card">
+        <div class="role-badge role-admin">ADMIN</div>
+        <ul class="team-members">
+          <li>R3_d</li>
+        </ul>
+      </div>
+
+      <!-- Moderator -->
+      <div class="team-card">
+        <div class="role-badge role-mod">MODERATOR</div>
+        <ul class="team-members">
+          <li>AY ⚓ Roseeta</li>
+          <li>Totsaya</li>
+        </ul>
+      </div>
+
+      <!-- Helper -->
+      <div class="team-card">
+        <div class="role-badge role-helper">HELPER</div>
+        <ul class="team-members">
+          <li>EL7oT</li>
+          <li>3amer</li>
+          <li>3mmar</li>
+          <li>Leon</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+<section id="social-links" style="padding: 60px 20px; max-width: 1100px; margin: 0 auto;">
+  
+  <style>
+    #social-links .section-title {
+      color: #ffff55;
+      text-shadow: 2px 2px 0px #000;
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      direction: rtl;
+    }
+
+    #social-links .social-card {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      background-color: #181818 !important;
+      border: 4px solid #000000 !important;
+      box-shadow: inset -4px -4px 0px 0px #0d0d0d, inset 4px 4px 0px 0px #333333 !important;
+      padding: 18px 20px !important;
+      text-decoration: none !important;
+      color: #ffffff !important;
+      cursor: pointer;
+      transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                  border-color 0.2s ease, 
+                  box-shadow 0.2s ease !important;
+    }
+
+    #social-links .social-card:hover {
+      transform: translateY(-6px) scale(1.04) !important;
+      border-color: #ffffff !important;
+      box-shadow: inset -4px -4px 0px 0px #141414, 
+                  inset 4px 4px 0px 0px #666666, 
+                  0px 10px 20px rgba(0, 0, 0, 0.7) !important;
+    }
+
+    #social-links .social-info {
+      text-align: right !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 6px !important;
+    }
+
+    #social-links .social-info h3 {
+      margin: 0 !important;
+      font-size: 20px !important;
+      font-weight: bold !important;
+      color: #ffffff !important;
+      text-decoration: none !important;
+      text-shadow: 1px 1px 0px #000 !important;
+    }
+
+    #social-links .social-info p {
+      margin: 0 !important;
+      font-size: 13px !important;
+      color: #aaaaaa !important;
+      text-decoration: none !important;
+      line-height: 1.4 !important;
+    }
+
+    #social-links .social-icon {
+      width: 52px !important;
+      height: 52px !important;
+      min-width: 52px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      font-size: 24px !important;
+      font-weight: bold !important;
+      border: 3px solid #000000 !important;
+      box-shadow: inset -2px -2px 0px 0px rgba(0, 0, 0, 0.6), inset 2px 2px 0px 0px rgba(255, 255, 255, 0.4) !important;
+    }
+
+    #social-links .social-icon svg {
+      width: 28px;
+      height: 28px;
+      fill: currentColor;
+    }
+
+    /* 🎨 ألوان الأيقونات لكل منصة */
+    #social-links .social-card.tiktok .social-icon { background-color: #000000 !important; color: #00f2fe !important; }
+    #social-links .social-card.kick .social-icon { background-color: #53fc18 !important; color: #000000 !important; }
+    #social-links .social-card.youtube .social-icon { background-color: #ff0000 !important; color: #ffffff !important; }
+    #social-links .social-card.instagram .social-icon { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) !important; color: #ffffff !important; }
+  </style>
+
+  <h2 class="section-title">تابع Lengweny على وسائل التواصل</h2>
+  
+  <div class="social-grid">
+    
+    <!-- TikTok -->
+    <a href="https://www.tiktok.com/@lengwenyx?_r=1&_t=ZS-98TpQz7RL7N" target="_blank" rel="noopener noreferrer" class="social-card tiktok">
+      <div class="social-info">
+        <h3>TikTok</h3>
+        <p>أحدث المقاطع القصيرة واللحظات السريعة</p>
+      </div>
+      <div class="social-icon">
+        <!-- SVG أيكون التيك توك -->
+        <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 1 1-5.2-1.74 2.89 2.89 0 0 1 2.31-2.22V8.2a6.34 6.34 0 1 0 6.34 6.34V9.25a8.27 8.27 0 0 0 4.77 1.52V7.32a4.85 4.85 0 0 1-1-0.63z"/></svg>
+      </div>
+    </a>
+
+    <!-- Kick -->
+    <a href="https://kick.com/lengxweny" target="_blank" rel="noopener noreferrer" class="social-card kick">
+      <div class="social-info">
+        <h3>Kick</h3>
+        <p>تابع البث المباشر والتفاعل اليومي</p>
+      </div>
+      <div class="social-icon">K</div>
+    </a>
+
+    <!-- YouTube -->
+    <a href="https://youtube.com/@lengxweny?si=u2vYQgc8C8Byzawt" target="_blank" rel="noopener noreferrer" class="social-card youtube">
+      <div class="social-info">
+        <h3>YouTube</h3>
+        <p>شاهد الشروحات والفعاليات والملخصات</p>
+      </div>
+      <div class="social-icon">▶</div>
+    </a>
+
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/lengxweny/" target="_blank" rel="noopener noreferrer" class="social-card instagram">
+      <div class="social-info">
+        <h3>Instagram</h3>
+        <p>تابع الصور والأخبار واليوميات</p>
+      </div>
+      <div class="social-icon">
+        <!-- SVG أيكون إنستغرام الاحترافية -->
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast">
+    <span class="toast-icon">✓</span>
+    <span id="toast-msg">تم نسخ الـ IP بنجاح!</span>
+  </div>
+
+  <script>
+    function copyIp(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        const toast = document.getElementById('toast');
+        toast.classList.add('show');
+        setTimeout(() => {
+          toast.classList.remove('show');
+        }, 2500);
+      });
+    }
+  </script>
+
+</body>
+</html>
